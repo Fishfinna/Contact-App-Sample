@@ -1,0 +1,64 @@
+/* 
+___colours__
+Rosé Pine Dawn
+link: https://rosepinetheme.com/palette.html#rose-pine
+
+MAIN
+base background = #faf4ed
+text = #575279
+
+Layering
+light layer = #fffaf3
+layer = #f2e9de
+dark layer = #e4dfde
+
+accents
+links (regular) = #b4637a
+links hovered = #d7827e
+boarders = #9893a5
+light purple accent = #907aa9
+light blue accent = #56949f
+dark blue = #286983
+gold = #ea9d34
+*/
+
+
+/* "Zen Kurenaido" for body fonts, "Unica One" for important stuff */
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Zen+Kurenaido&display=swap');
+
+html{
+    font-family: "Zen Kurenaido";
+    height: 100%;
+}
+body{
+    background-color: #faf4ed;
+    color: #575279;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+nav{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    background-color: #56949f;
+    width: 30%;
+    position: fixed;
+}
+a{
+    text-decoration: none;
+    font-size: calc(1.5rem + .05vw);
+    color: #e0def4;
+    margin: 5%;
+}
+.mainbutton{
+    position: relative;
+    font-size: calc(2rem + 2vw);
+}
+a:hover{
+    color:#ea9d34;
+}
