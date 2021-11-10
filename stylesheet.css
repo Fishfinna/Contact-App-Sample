@@ -23,30 +23,29 @@ gold = #ea9d34
 */
 
 
-/* "Zen Kurenaido" for body fonts, "Unica One" is just here encase I want something different */
+/* "Zen Kurenaido" for default fonts, "Unica One" for special stuff */
 
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Zen+Kurenaido&display=swap');
 
 /* Changes for Mobile users */
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 800px) {
     body nav {
         flex-direction: row;
         align-items: flex-end;
         justify-content: center;
         min-width: 100%;
-        max-height: 15%;
-        min-height: 8rem;
+        min-height: 1em;
         text-align: center;
         position: sticky;
         top: 0;
     }
     body nav a {
-        font-size: 1rem;
+        font-size: calc(.4em + 1vw);
     }
     nav a.mainbutton {
-        font-size: 1.5rem;
+        font-size: 1.5em;
     }
     html body {
         display: flex;
@@ -58,9 +57,11 @@ gold = #ea9d34
         height: 100%;
     }
     div.contacts p {
-        margin: 5%;
-        overflow: hidden;
+        margin: 8%;
         flex-grow: inherit;
+        min-width: 80%;
+        min-height: auto;
+        padding-bottom: 30%;
     }
     p.newcontent {
         display: none;
@@ -71,6 +72,14 @@ gold = #ea9d34
     body form {
         margin-left: 0%;
     }
+    body .page3 {
+        margin-left: 10%;
+        font-size: 1.2em;
+        max-width: 80%;
+    }
+    body .page3 p {
+        font-size: calc(.4em + 2vw);
+    }
 }
 
 
@@ -79,6 +88,7 @@ gold = #ea9d34
 html {
     font-family: "Zen Kurenaido";
     height: 100%;
+    word-wrap: break-word;
 }
 
 body {
@@ -102,7 +112,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    font-size: calc(1.5rem + .05vw);
+    font-size: calc(1.5em + .05vw);
     color: #e0def4;
     margin: 5%;
     font-weight: 600;
@@ -110,7 +120,7 @@ nav a {
 
 .mainbutton {
     position: relative;
-    font-size: calc(2rem + 2vw);
+    font-size: calc(2em + 2vw);
 }
 
 a:hover {
@@ -131,11 +141,11 @@ a:hover {
 .contacts p {
     background-color: #907aa9;
     color: #faf4ed;
-    margin: 3.5%;
-    min-height: 12rem;
+    margin: 2em;
+    min-height: 7em;
     overflow: hidden;
-    min-width: 20rem;
-    padding: 5px;
+    min-width: 12em;
+    padding: 1em;
     border-radius: 2%;
 }
 
@@ -152,7 +162,7 @@ a:hover {
 }
 
 button[type=button] {
-    max-height: 2rem;
+    max-height: 2em;
 }
 
 form {
@@ -176,7 +186,7 @@ form {
 input {
     color: #575279;
     background-color: #e4dfde;
-    border: .1rem solid #9893a5;
+    border: .1em solid #9893a5;
     margin: 5%;
     overflow: hidden;
     padding: 5%;
@@ -187,26 +197,65 @@ button {
     background-color: #9893a5;
     outline: none;
     border: none;
-    margin: 2%
+    margin: 2%;
+    border-radius: 4%;
+    font-family: "Unica One";
 }
 
-#SavCan {
+.buttons {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-#save {
+button.redbutton {
     background-color: #b4637a;
     min-width: 100%;
     padding: 5%;
 }
 
-#cancel {
+button.redbutton:hover {
+    background-color: #d7827e;
+}
+
+button.bluebutton {
     background-color: #286983;
     padding: 5%;
 }
 
+button.bluebutton:hover {
+    background-color: #56949f;
+}
+
 ::placeholder {
     color: #575279;
+}
+
+
+/* Page 3 specifics */
+
+h1 {
+    font-family: "Unica One"
+}
+
+.page3 {
+    margin-left: 40%;
+    padding: 10%;
+}
+
+#Address p {
+    margin: 0;
+}
+
+#contactbuttons {
+    max-width: 5em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#contactbuttons button {
+    padding: .3em;
+    margin: 15%;
+    align-self: center;
+    flex-shrink: 1;
 }
