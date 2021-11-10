@@ -13,8 +13,8 @@ layer = #f2e9de
 dark layer = #e4dfde
 
 accents
-links (regular) = #b4637a
-links hovered = #d7827e
+dark pink = #b4637a
+light pink = #d7827e
 boarders = #9893a5
 light purple accent = #907aa9
 light blue accent = #56949f
@@ -23,23 +23,27 @@ gold = #ea9d34
 */
 
 
-/* "Zen Kurenaido" for body fonts, "Unica One" for important stuff */
+/* "Zen Kurenaido" for body fonts, "Unica One" is just here encase I want something different */
 
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Zen+Kurenaido&display=swap');
 
-/* For Mobile users */
+/* Changes for Mobile users */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 850px) {
     body nav {
         flex-direction: row;
         align-items: flex-end;
+        justify-content: center;
         min-width: 100%;
         max-height: 15%;
         min-height: 8rem;
         text-align: center;
         position: sticky;
         top: 0;
+    }
+    body nav a {
+        font-size: 1.2rem;
     }
     html body {
         display: flex;
@@ -61,10 +65,13 @@ gold = #ea9d34
     .newcontent {
         content: "New Contacts";
     }
+    body form {
+        margin-left: 0%;
+    }
 }
 
 
-/* For Computer users */
+/* Basics for Computer users */
 
 html {
     font-family: "Zen Kurenaido";
@@ -104,8 +111,11 @@ nav a {
 }
 
 a:hover {
-    color: #ea9d34;
+    color: #286983;
 }
+
+
+/* Page 1 specifics */
 
 .contacts {
     margin-left: 30%;
@@ -123,9 +133,77 @@ a:hover {
     overflow: hidden;
     min-width: 20rem;
     padding: 5px;
+    border-radius: 2%;
 }
 
 .contacts p:hover {
     background-color: #ea9d34;
+    color: #575279;
+}
+
+
+/* Page 2 specifics */
+
+#emptyformat {
+    visibility: hidden;
+}
+
+button[type=button] {
+    max-height: 2rem;
+}
+
+form {
+    margin-left: 30%;
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 50%;
+    justify-content: center;
+}
+
+.plus {
+    min-width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    color: #575279;
+    background-color: #e4dfde;
+    border: .1rem solid #9893a5;
+    margin: 5%;
+    overflow: hidden;
+    padding: 5%;
+}
+
+button {
+    color: #fffaf3;
+    background-color: #9893a5;
+    outline: none;
+    border: none;
+    margin: 2%
+}
+
+#SavCan {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#save {
+    background-color: #b4637a;
+    min-width: 100%;
+    padding: 5%;
+}
+
+#cancel {
+    background-color: #286983;
+    padding: 5%;
+}
+
+::placeholder {
     color: #575279;
 }
