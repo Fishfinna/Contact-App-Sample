@@ -43,7 +43,10 @@ gold = #ea9d34
         top: 0;
     }
     body nav a {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    nav a.mainbutton {
+        font-size: 1.5rem;
     }
     html body {
         display: flex;
@@ -55,9 +58,9 @@ gold = #ea9d34
         height: 100%;
     }
     div.contacts p {
-        margin: 3%;
+        margin: 5%;
         overflow: hidden;
-        flex: 300px;
+        flex-grow: inherit;
     }
     p.newcontent {
         display: none;
