@@ -32,13 +32,14 @@ gold = #ea9d34
 
 @media only screen and (max-width: 900px) {
     body nav {
-        display: flex;
         flex-direction: row;
         align-items: flex-end;
         min-width: 100%;
         max-height: 15%;
         min-height: 8rem;
         text-align: center;
+        position: sticky;
+        top: 0;
     }
     html body {
         display: flex;
@@ -46,15 +47,13 @@ gold = #ea9d34
         flex-direction: column;
     }
     div.contacts {
+        margin-left: 0;
         height: 100%;
     }
     div.contacts p {
         margin: 3%;
         overflow: hidden;
         flex: 300px;
-    }
-    body nav a {
-        font-weight: 600;
     }
     p.newcontent {
         display: none;
@@ -87,9 +86,8 @@ nav {
     flex-direction: column;
     background-color: #56949f;
     min-width: 30%;
-    position: sticky;
-    top: 0;
-    min-height: auto;
+    position: fixed;
+    min-height: 100%;
 }
 
 nav a {
@@ -97,6 +95,7 @@ nav a {
     font-size: calc(1.5rem + .05vw);
     color: #e0def4;
     margin: 5%;
+    font-weight: 600;
 }
 
 .mainbutton {
@@ -109,6 +108,7 @@ a:hover {
 }
 
 .contacts {
+    margin-left: 30%;
     display: flex;
     width: 100%;
     flex-flow: row wrap;
