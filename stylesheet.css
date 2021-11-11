@@ -52,11 +52,11 @@ gold = #ea9d34
         height: auto;
         flex-direction: column;
     }
-    div.contacts {
+    main.contacts {
         margin-left: 0;
         height: 100%;
     }
-    div.contacts p {
+    main.contacts p {
         margin: 8%;
         flex-grow: inherit;
         min-width: 80%;
@@ -69,10 +69,10 @@ gold = #ea9d34
     .newcontent {
         content: "New Contacts";
     }
-    body form {
+    main form {
         margin-left: 0%;
     }
-    body .page3 {
+    main#page3 {
         margin-left: 10%;
         font-size: 1.2em;
         max-width: 100%;
@@ -80,7 +80,7 @@ gold = #ea9d34
         flex-direction: column;
         justify-content: center;
     }
-    body .page3 p {
+    body #page3 p {
         font-size: calc(.4em + 2vw);
     }
     div#contactbuttons {
@@ -88,10 +88,21 @@ gold = #ea9d34
         max-width: 80vw;
         flex-wrap: wrap;
     }
-    div#contactbuttons button {
+    form div.buttons {
+        align-self: center;
+        flex-wrap: wrap;
+    }
+    div#contactbuttons button,
+    form div.buttons button {
         margin: 5%;
         flex-grow: 4;
         min-width: 100%;
+    }
+    body main {
+        margin-left: 0%;
+    }
+    body main#page2 {
+        margin: 0%;
     }
 }
 
@@ -112,6 +123,10 @@ body {
     display: flex;
     flex-direction: row;
     height: auto;
+}
+
+main {
+    margin-left: 40%;
 }
 
 nav {
@@ -178,13 +193,12 @@ button[type=button] {
     max-height: 2em;
 }
 
-form {
-    margin-left: 30%;
+main#page2 {
+    margin-left: 40%;
     margin-top: 10%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-width: 50%;
     justify-content: center;
 }
 
@@ -203,6 +217,7 @@ input {
     margin: 5%;
     overflow: hidden;
     padding: 5%;
+    font-size: calc(.5em + 1vh);
 }
 
 button {
@@ -219,12 +234,13 @@ button {
 .buttons {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 button.redbutton {
     background-color: #b4637a;
-    min-width: 100%;
+    max-width: calc(.5em + 1vh);
+    min-width: 80%;
     padding: 5%;
 }
 
@@ -252,14 +268,18 @@ h1 {
     font-family: "Unica One"
 }
 
-.page3 {
-    margin-left: 40%;
-    padding: 10%;
-    font-size: x-large;
+main#page3 {
+    font-size: 150%;
 }
 
 #Address p {
-    margin: 0;
+    margin-top: -2%;
+}
+
+main#page3 p,
+main#page3 div {
+    margin-bottom: 5%;
+    font-weight: 600;
 }
 
 #contactbuttons {
@@ -273,4 +293,13 @@ h1 {
     margin: 15%;
     align-self: center;
     flex-shrink: 1;
+}
+
+
+/* image set up */
+
+img {
+    margin-top: 10%;
+    width: calc(3em + 4vh);
+    padding: 0;
 }
