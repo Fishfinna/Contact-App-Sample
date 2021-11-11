@@ -36,16 +36,16 @@ gold = #ea9d34
         align-items: flex-end;
         justify-content: center;
         min-width: 100%;
-        min-height: 1em;
         text-align: center;
         position: sticky;
         top: 0;
     }
     body nav a {
-        font-size: calc(.3em + 2vw);
+        font-size: 3vw;
+        font-weight: 700;
     }
     nav a.mainbutton {
-        font-size: calc(.4em + 2vw);
+        font-size: 4vw;
     }
     html body {
         display: flex;
@@ -62,12 +62,6 @@ gold = #ea9d34
         min-width: 80%;
         min-height: auto;
         padding-bottom: 30%;
-    }
-    p.newcontent {
-        display: none;
-    }
-    .newcontent {
-        content: "New Contacts";
     }
     main form {
         margin-left: 0%;
@@ -300,6 +294,6 @@ main#page3 div {
 
 img {
     margin-top: 10%;
-    width: calc(3em + 4vh);
+    width: calc(10vw + 10vw);
     padding: 0;
 }
