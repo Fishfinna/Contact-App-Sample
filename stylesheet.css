@@ -294,6 +294,6 @@ main#page3 div {
 
 img {
     margin-top: 10%;
-    width: calc(10vw + 10vw);
+    width: calc(2em + 3vw);
     padding: 0;
 }
