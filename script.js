@@ -185,7 +185,7 @@ function renderCreate() {
             button.setAttribute("id", "emptyformat");
         } else {
             button.setAttribute("id", `extra${input}field`);
-        }
+        };
         container.appendChild(button);
         console.log(button, input)
     };
