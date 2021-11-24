@@ -1,4 +1,4 @@
-/* 
+    /* 
 ___colours__
 Rosé Pine Dawn
 link: https://rosepinetheme.com/palette.html#rose-pine
@@ -21,279 +21,268 @@ light blue accent = #56949f
 dark blue = #286983
 gold = #ea9d34
 */
-
-
-/* "Zen Kurenaido" for default fonts, "Unica One" for special stuff */
-
-@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Zen+Kurenaido&display=swap');
-
-/* Changes for Mobile users */
-
-@media only screen and (max-width: 800px) {
-    body nav {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: center;
-        min-width: 100%;
-        text-align: center;
-        position: sticky;
-        top: 0;
+    /* "Zen Kurenaido" for default fonts, "Unica One" for special stuff */
+    
+    @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Unica+One&family=Zen+Kurenaido&display=swap');
+    /* Changes for Mobile users */
+    
+    @media only screen and (max-width: 800px) {
+        body nav {
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: center;
+            min-width: 100%;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        body nav a {
+            font-size: 3.1vw;
+            font-weight: 700;
+        }
+        nav a.mainbutton {
+            font-size: 4vw;
+        }
+        html body {
+            display: flex;
+            height: auto;
+            flex-direction: column;
+        }
+        main.contacts {
+            margin-left: 0;
+            height: 100%;
+        }
+        main.contacts a {
+            margin: 2%;
+            min-width: 80%;
+        }
+        div form {
+            margin-left: 0%;
+        }
+        main#page3 {
+            margin-left: 10%;
+            margin-top: 10%;
+            font-size: 1.2em;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        body #page3 p {
+            font-size: calc(.4em + 2vw);
+        }
+        div#contactbuttons {
+            align-self: flex-start;
+            max-width: 80vw;
+            flex-wrap: wrap;
+        }
+        form div.buttons {
+            align-self: center;
+            flex-wrap: wrap;
+        }
+        div#contactbuttons button,
+        form div.buttons button {
+            margin: 5%;
+            flex-grow: 4;
+            min-width: 100%;
+        }
+        body main {
+            margin-left: 0%;
+        }
+        body main#page2 {
+            margin: 0%;
+        }
     }
-    body nav a {
-        font-size: 3vw;
-        font-weight: 700;
-    }
-    nav a.mainbutton {
-        font-size: 4vw;
-    }
-    html body {
-        display: flex;
-        height: auto;
-        flex-direction: column;
-    }
-    main.contacts {
-        margin-left: 0;
+    /* Basics for Computer users */
+    
+    html {
+        font-family: "Zen Kurenaido";
         height: 100%;
+        word-wrap: break-word;
+        color: #575279;
     }
-    main.contacts p {
-        margin: 8%;
-        flex-grow: inherit;
-        min-width: 80%;
-        min-height: auto;
-        padding-bottom: 30%;
-    }
-    main form {
-        margin-left: 0%;
-    }
-    main#page3 {
-        margin-left: 10%;
-        font-size: 1.2em;
-        max-width: 100%;
+    
+    body {
+        background-color: #faf4ed;
+        color: #575279;
+        padding: 0;
+        margin: 0;
         display: flex;
+        flex-direction: row;
+        height: auto;
+    }
+    
+    main {
+        margin-left: 40%;
+        margin-top: 5%;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: column;
+        background-color: #56949f;
+        min-width: 30%;
+        position: fixed;
+        min-height: 100%;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #e0def4;
+        font-size: calc(1em + .05vw);
+    }
+    
+    nav a {
+        font-size: calc(1.5em + .05vw);
+        margin: 5%;
+        font-weight: 600;
+    }
+    
+    .mainbutton {
+        position: relative;
+        font-size: calc(2em + 2vw);
+    }
+    
+    a:hover {
+        color: #286983;
+    }
+    /* Page 1 specifics */
+    
+    .contacts {
+        margin-left: 30%;
+        display: flex;
+        width: 100%;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    
+    .contacts p {
+        background-color: #907aa9;
+        color: #faf4ed;
+        margin: 2em;
+        min-height: 7em;
+        overflow: hidden;
+        min-width: 12em;
+        padding: 1em;
+        border-radius: 2%;
+    }
+    
+    .contacts p:hover {
+        background-color: #ea9d34;
+        color: #575279;
+    }
+    /* Page 2 specifics */
+    
+    #emptyformat {
+        visibility: hidden;
+    }
+    
+    button[type=button] {
+        max-height: 2em;
+    }
+    
+    main#page2 {
+        margin-left: 40%;
+        display: flex;
+        align-items: center;
         flex-direction: column;
         justify-content: center;
     }
-    body #page3 p {
-        font-size: calc(.4em + 2vw);
+    
+    .plus {
+        min-width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
-    div#contactbuttons {
-        align-self: flex-start;
-        max-width: 80vw;
-        flex-wrap: wrap;
-    }
-    form div.buttons {
-        align-self: center;
-        flex-wrap: wrap;
-    }
-    div#contactbuttons button,
-    form div.buttons button {
+    
+    input {
+        color: #575279;
+        background-color: #e4dfde;
+        border: .1em solid #9893a5;
         margin: 5%;
-        flex-grow: 4;
-        min-width: 100%;
+        overflow: hidden;
+        padding: 5%;
+        font-size: calc(.5em + 1.5vh);
     }
-    body main {
-        margin-left: 0%;
+    
+    button {
+        color: #fffaf3;
+        background-color: #9893a5;
+        outline: none;
+        border: none;
+        margin: 2%;
+        border-radius: 4%;
+        font-family: "Unica One";
+        font-size: calc(1em + .5vw);
     }
-    body main#page2 {
-        margin: 0%;
+    
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
     }
-}
-
-
-/* Basics for Computer users */
-
-html {
-    font-family: "Zen Kurenaido";
-    height: 100%;
-    word-wrap: break-word;
-}
-
-body {
-    background-color: #faf4ed;
-    color: #575279;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    height: auto;
-}
-
-main {
-    margin-left: 40%;
-}
-
-nav {
-    display: flex;
-    flex-direction: column;
-    background-color: #56949f;
-    min-width: 30%;
-    position: fixed;
-    min-height: 100%;
-}
-
-nav a {
-    text-decoration: none;
-    font-size: calc(1.5em + .05vw);
-    color: #e0def4;
-    margin: 5%;
-    font-weight: 600;
-}
-
-.mainbutton {
-    position: relative;
-    font-size: calc(2em + 2vw);
-}
-
-a:hover {
-    color: #286983;
-}
-
-
-/* Page 1 specifics */
-
-.contacts {
-    margin-left: 30%;
-    display: flex;
-    width: 100%;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-
-.contacts p {
-    background-color: #907aa9;
-    color: #faf4ed;
-    margin: 2em;
-    min-height: 7em;
-    overflow: hidden;
-    min-width: 12em;
-    padding: 1em;
-    border-radius: 2%;
-}
-
-.contacts p:hover {
-    background-color: #ea9d34;
-    color: #575279;
-}
-
-
-/* Page 2 specifics */
-
-#emptyformat {
-    visibility: hidden;
-}
-
-button[type=button] {
-    max-height: 2em;
-}
-
-main#page2 {
-    margin-left: 40%;
-    margin-top: 10%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.plus {
-    min-width: 50%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-input {
-    color: #575279;
-    background-color: #e4dfde;
-    border: .1em solid #9893a5;
-    margin: 5%;
-    overflow: hidden;
-    padding: 5%;
-    font-size: calc(.5em + 1vh);
-}
-
-button {
-    color: #fffaf3;
-    background-color: #9893a5;
-    outline: none;
-    border: none;
-    margin: 2%;
-    border-radius: 4%;
-    font-family: "Unica One";
-    font-size: calc(1em + .5vw);
-}
-
-.buttons {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-button.redbutton {
-    background-color: #b4637a;
-    max-width: calc(.5em + 1vh);
-    min-width: 80%;
-    padding: 5%;
-}
-
-button.redbutton:hover {
-    background-color: #d7827e;
-}
-
-button.bluebutton {
-    background-color: #286983;
-    padding: 5%;
-}
-
-button.bluebutton:hover {
-    background-color: #56949f;
-}
-
-::placeholder {
-    color: #575279;
-}
-
-
-/* Page 3 specifics */
-
-h1 {
-    font-family: "Unica One"
-}
-
-main#page3 {
-    font-size: 150%;
-}
-
-#Address p {
-    margin-top: -2%;
-}
-
-main#page3 p,
-main#page3 div {
-    margin-bottom: 5%;
-    font-weight: 600;
-}
-
-#contactbuttons {
-    max-width: 5em;
-    display: flex;
-    justify-content: flex-start;
-}
-
-#contactbuttons button {
-    padding: .3em;
-    margin: 15%;
-    align-self: center;
-    flex-shrink: 1;
-}
-
-
-/* image set up */
-
-img {
-    margin-top: 10%;
-    width: calc(2em + 3vw);
-    padding: 0;
-}
+    
+    button.redbutton {
+        background-color: #b4637a;
+        max-width: calc(.5em + 1vh);
+        min-width: 80%;
+        padding: 5%;
+    }
+    
+    button.redbutton:hover {
+        background-color: #d7827e;
+    }
+    
+    button.bluebutton {
+        background-color: #286983;
+        padding: 5%;
+    }
+    
+    button.bluebutton:hover {
+        background-color: #56949f;
+    }
+    
+     ::placeholder {
+        color: #575279;
+    }
+    /* Page 3 specifics */
+    
+    h1 {
+        font-family: "Unica One"
+    }
+    
+    main#page3 {
+        font-size: 150%;
+    }
+    
+    #Address p {
+        margin-top: -2%;
+    }
+    
+    main#page3 p,
+    main#page3 div {
+        margin-bottom: 5%;
+        font-weight: 600;
+    }
+    
+    #contactbuttons {
+        max-width: 5em;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    #contactbuttons button {
+        padding: .3em;
+        margin: 15%;
+        align-self: center;
+        flex-shrink: 1;
+    }
+    /* image set up */
+    
+    img {
+        width: calc(4em + 3vw);
+        padding: 5%;
+    }
