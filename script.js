@@ -1,3 +1,5 @@
+// ASSIGNMENT THREE
+// (1)
 // practice variables to test run
 let contactList = [{
         name: "John Smith",
@@ -8,7 +10,7 @@ let contactList = [{
     {
         name: "Jane Doe",
         phone: "123-867-5309",
-        address: "Address address adress. ",
+        address: "Address address this is a place. ",
         email: "Janeeatsdoe@gmail.com",
     },
     {
@@ -18,6 +20,10 @@ let contactList = [{
         email: "adress@mail.example.com",
     },
 ];
+
+
+
+// ASSIGNMENT TWO
 
 // Index Page
 function cleanUpIndex() {
@@ -56,7 +62,10 @@ function renderIndex(contactList) {
 function cleanUpView() {
     // removes all of the nodes for this page
     let pop3 = document.querySelector(".contactinfo");
-    pop3.remove();
+
+    if (pop3 === true) {
+        pop3.remove();
+    };
 };
 
 
@@ -115,7 +124,9 @@ function renderView(contactList) {
 function cleanUpCreate() {
     // removes all unique nodes
     let pop2 = document.querySelector(".contactedit");
-    pop2.remove();
+    if (pop2 === true) {
+        pop2.remove();
+    };
 };
 
 function renderCreate() {
@@ -211,3 +222,17 @@ function renderCreate() {
     cancel.textContent = "Cancel";
     button_place.appendChild(cancel);
 };
+
+//  ASSIGNMENT THREE
+// (2)
+
+function clear_main(event) {
+    cleanUpView();
+    cleanUpCreate();
+    cleanUpIndex();
+
+    renderIndex(contactList);
+}
+
+let Contacts = document.querySelector("a.mainbutton");
+Contacts.addEventListener("click", clear_main);
