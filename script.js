@@ -61,9 +61,8 @@ function renderIndex(contactList) {
 // View Page (page 3)
 function cleanUpView() {
     // removes all of the nodes for this page
-    let pop3 = document.querySelector(".contactinfo");
-
-    if (pop3 === true) {
+    let pop3 = document.querySelector("page3");
+    if (pop3 != null) {
         pop3.remove();
     };
 };
@@ -72,7 +71,12 @@ function cleanUpView() {
 function renderView(contactList) {
     // creates the elements that are unique to the view page
     // takes an object (which has contact info)
-    let mainpage = document.querySelector("main#page3");
+    let defaultPage = document.querySelector("main")
+
+    let mainpage = document.createElement('div');
+    mainpage.setAttribute('id', '#page3');
+
+    defaultPage.append(mainpage);
 
     let info = document.createElement("div");
     info.classList.add("contactinfo");
@@ -123,15 +127,19 @@ function renderView(contactList) {
 // Create Page (page 2)
 function cleanUpCreate() {
     // removes all unique nodes
-    let pop2 = document.querySelector(".contactedit");
-    if (pop2 === true) {
+    let pop2 = document.querySelector("#page2");
+    if (pop2 !== null) {
         pop2.remove();
     };
 };
 
 function renderCreate() {
     // creates all of the DOM nodes
-    let mainpage = document.querySelector("#page2");
+    let defaultPage = document.querySelector("main")
+
+    let mainpage = document.createElement('div');
+    mainpage.setAttribute('id', 'page2');
+    defaultPage.appendChild(mainpage)
 
 
     let editpage = document.createElement("div");
@@ -198,7 +206,6 @@ function renderCreate() {
             button.setAttribute("id", `extra${input}field`);
         };
         container.appendChild(button);
-        console.log(button, input)
     };
 
     let button_place = document.createElement("div");
@@ -227,12 +234,24 @@ function renderCreate() {
 // (2)
 
 function clear_main(event) {
+    event.preventDefault()
     cleanUpView();
     cleanUpCreate();
     cleanUpIndex();
-
     renderIndex(contactList);
 }
 
 let Contacts = document.querySelector("a.mainbutton");
 Contacts.addEventListener("click", clear_main);
+
+// (3)
+function clear_new_con(event) {
+    event.preventDefault();
+    cleanUpCreate();
+    cleanUpIndex();
+    cleanUpView();
+    renderCreate();
+}
+
+let Create_new_contact = document.querySelector(".newContact");
+Create_new_contact.addEventListener("click", clear_new_con);
