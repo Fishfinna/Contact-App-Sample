@@ -44,6 +44,19 @@ function createSingleIndex(contact) {
 
     card.appendChild(para);
 
+    // (4)
+    card.addEventListener("click", (event) => {
+        event.preventDefault();
+        let contactName = event.target.textContent;
+        for (i = 0; i < contactList.length; i++) {
+            let placeContact = contactList[i]
+            if (placeContact['name'] == contactName) {
+                console.log(contactName, placeContact);
+
+            }
+        }
+    })
+
     return card;
 };
 
@@ -128,7 +141,7 @@ function renderView(contactList) {
 function cleanUpCreate() {
     // removes all unique nodes
     let pop2 = document.querySelector("#page2");
-    if (pop2 !== null) {
+    if (pop2 != null) {
         pop2.remove();
     };
 };
@@ -234,7 +247,7 @@ function renderCreate() {
 // (2)
 
 function clear_main(event) {
-    event.preventDefault()
+    event.preventDefault();
     cleanUpView();
     cleanUpCreate();
     cleanUpIndex();
@@ -251,7 +264,7 @@ function clear_new_con(event) {
     cleanUpIndex();
     cleanUpView();
     renderCreate();
-}
+};
 
 let Create_new_contact = document.querySelector(".newContact");
 Create_new_contact.addEventListener("click", clear_new_con);
