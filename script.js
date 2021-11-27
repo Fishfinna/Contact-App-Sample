@@ -51,8 +51,8 @@ function createSingleIndex(contact) {
         for (i = 0; i < contactList.length; i++) {
             let placeContact = contactList[i]
             if (placeContact['name'] == contactName) {
-                console.log(contactName, placeContact);
-
+                cleanUpIndex();
+                renderView(placeContact);
             }
         }
     })
@@ -74,20 +74,20 @@ function renderIndex(contactList) {
 // View Page (page 3)
 function cleanUpView() {
     // removes all of the nodes for this page
-    let pop3 = document.querySelector("page3");
+    let pop3 = document.querySelector("#page3");
     if (pop3 != null) {
         pop3.remove();
-    };
+    }
 };
 
 
-function renderView(contactList) {
+function renderView(contact) {
     // creates the elements that are unique to the view page
     // takes an object (which has contact info)
     let defaultPage = document.querySelector("main")
 
     let mainpage = document.createElement('div');
-    mainpage.setAttribute('id', '#page3');
+    mainpage.setAttribute('id', 'page3');
 
     defaultPage.append(mainpage);
 
@@ -101,22 +101,22 @@ function renderView(contactList) {
     info.appendChild(pic);
 
     let title = document.createElement("h1");
-    title.textContent = contactList["name"];
+    title.textContent = contact["name"];
     info.appendChild(title)
 
     let email = document.createElement("p");
     email.setAttribute("id", "contactemail");
-    email.textContent = `email: ${contactList["email"]}`;
+    email.textContent = `email: ${contact["email"]}`;
     info.appendChild(email);
 
     let phone = document.createElement("p");
     phone.classList.add("contactphone");
-    phone.textContent = `cell: ${contactList["phone"]}`;
+    phone.textContent = `cell: ${contact["phone"]}`;
     info.appendChild(phone);
 
     let address = document.createElement("p");
     address.classList.add("contactaddress");
-    address.textContent = `address: ${contactList["address"]}`;
+    address.textContent = `address: ${contact["address"]}`;
     info.appendChild(address);
 
     let buttonsplace = document.createElement("p");
@@ -135,6 +135,14 @@ function renderView(contactList) {
     close.setAttribute("value", "Close");
     close.textContent = "Close";
     buttonsplace.appendChild(close);
+
+    // (5) also (6??)
+    close.addEventListener("click", (event) => {
+        cleanUpCreate();
+        cleanUpIndex();
+        cleanUpView();
+        renderIndex(contactList);
+    })
 };
 
 // Create Page (page 2)
@@ -146,13 +154,13 @@ function cleanUpCreate() {
     };
 };
 
-function renderCreate() {
+function renderCreate(contacts) {
     // creates all of the DOM nodes
     let defaultPage = document.querySelector("main")
 
     let mainpage = document.createElement('div');
     mainpage.setAttribute('id', 'page2');
-    defaultPage.appendChild(mainpage)
+    defaultPage.appendChild(mainpage);
 
 
     let editpage = document.createElement("div");
@@ -233,6 +241,22 @@ function renderCreate() {
     save.textContent = "Save Contact";
     button_place.appendChild(save);
 
+    // (8) and (9)
+
+    save.addEventListener("click", (event) => {
+        let nameData = document.querySelector("#contactname").value
+        let phoneData = document.querySelector("#contactphone").value
+        let addressData = document.querySelector("#contactaddress").value
+        let emailData = document.querySelector("#contactemail").value
+
+        let inputContact = {
+            name: nameData,
+            phone: phoneData,
+            address: addressData,
+            email: emailData,
+        };
+        console.log(inputContact);
+    })
 
     let cancel = document.createElement("button");
     cancel.setAttribute("type", "reset");
@@ -240,6 +264,17 @@ function renderCreate() {
     cancel.setAttribute("id", "cancel");
     cancel.setAttribute("name", "cancel");
     cancel.textContent = "Cancel";
+
+
+    // (7)
+    cancel.addEventListener("click", (event) => {
+        cleanUpCreate();
+        cleanUpIndex();
+        cleanUpView();
+        renderIndex(contactList);
+
+    })
+
     button_place.appendChild(cancel);
 };
 

@@ -73,9 +73,6 @@ gold = #ea9d34
             flex-direction: column;
             justify-content: center;
         }
-        body #page3 p {
-            font-size: calc(.4em + 2vw);
-        }
         div#contactbuttons {
             align-self: flex-start;
             max-width: 80vw;
@@ -105,6 +102,7 @@ gold = #ea9d34
         height: 100%;
         word-wrap: break-word;
         color: #575279;
+        font-size: 110%;
     }
     
     body {
@@ -161,7 +159,7 @@ gold = #ea9d34
         justify-content: flex-start;
     }
     
-    .contacts p {
+    .contacts a p {
         background-color: #907aa9;
         color: #faf4ed;
         margin: 2em;
@@ -173,7 +171,7 @@ gold = #ea9d34
         align-items: center;
     }
     
-    .contacts p:hover {
+    .contacts a p:hover {
         background-color: #ea9d34;
         color: #575279;
     }
@@ -263,14 +261,14 @@ gold = #ea9d34
         font-size: 150%;
     }
     
-    #Address p {
-        margin-top: -2%;
-    }
-    
     main#page3 p,
     main#page3 div {
         margin-bottom: 5%;
         font-weight: 600;
+    }
+    
+    .contactinfo {
+        font-size: 120%;
     }
     
     #contactbuttons {
