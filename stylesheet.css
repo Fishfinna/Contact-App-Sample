@@ -262,9 +262,10 @@ gold = #ea9d34
     }
     
     main#page3 p,
-    main#page3 div {
+    div.contactinfo {
         margin-bottom: 5%;
         font-weight: 600;
+        font-size: 120%;
     }
     
     .contactinfo {

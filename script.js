@@ -21,7 +21,8 @@ let contactList = [{
     },
 ];
 
-
+// (10)
+renderIndex(contactList)
 
 // ASSIGNMENT TWO
 
@@ -244,6 +245,7 @@ function renderCreate(contacts) {
     // (8) and (9)
 
     save.addEventListener("click", (event) => {
+        event.preventDefault()
         let nameData = document.querySelector("#contactname").value
         let phoneData = document.querySelector("#contactphone").value
         let addressData = document.querySelector("#contactaddress").value
@@ -255,8 +257,13 @@ function renderCreate(contacts) {
             address: addressData,
             email: emailData,
         };
-        console.log(inputContact);
-    })
+        contactList.push(inputContact);
+        console.log(contactList);
+        cleanUpView();
+        cleanUpCreate();
+        cleanUpIndex();
+        renderIndex(contactList);
+    });
 
     let cancel = document.createElement("button");
     cancel.setAttribute("type", "reset");
